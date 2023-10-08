@@ -1,0 +1,16 @@
+PROCEDURE Card_sort(VAR tab : ARRAY_OF INTEGER)
+VAR
+    i , key  , j : INTEGER ;
+BEGIN
+    FOR i FROM 1 TO tab.length-1 STEP 1  DO
+        key :- tab[i];
+        j := i-1 ; 
+        //move elements of tab[] that are gtrater than key
+        //to the righ postion
+            WHILE (j>=0 && tab[j]> key) DO
+                tab[j+1] = tab[j];
+                j:=j -1
+            END_WHILE
+            tab[j+1] = key
+    END_FOR
+END
